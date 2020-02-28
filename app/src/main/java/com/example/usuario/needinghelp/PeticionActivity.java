@@ -50,7 +50,7 @@ public class PeticionActivity extends AppCompatActivity {
                 longitud = Float.parseFloat(lon.getText().toString());
                 nombre = nomb.getText().toString();
                 descripcion = desc.getText().toString();
-
+                agregarPeticion();
             }
         });
         btnGPS = (Button) findViewById(R.id.ubAcbttn);
@@ -117,12 +117,12 @@ public class PeticionActivity extends AppCompatActivity {
 
     public void agregarPeticion(){
         try {
-            PreparedStatement pet = conexionBD().prepareStatement("insert into Peticiones values(?,?,?,?,?,?)");
-            pet.setString(2,nombre);
-            pet.setString(3,descripcion);
-            pet.setFloat(4,latitud);
-            pet.setFloat(5,longitud);
-            pet.setString(6, listView.toString());
+            PreparedStatement pet = conexionBD().prepareStatement("insert into Peticiones values(?,?,?,?,?)");
+            pet.setString(1,nombre);
+            pet.setString(2,descripcion);
+            pet.setFloat(3,latitud);
+            pet.setFloat(4,longitud);
+            pet.setString(5, listView.toString());
             pet.executeUpdate();
             Toast.makeText(getApplicationContext(),"Petición enviada exitosamente",Toast.LENGTH_SHORT).show();
 
