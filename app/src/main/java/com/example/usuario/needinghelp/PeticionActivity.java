@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class PeticionActivity extends AppCompatActivity {
 
@@ -43,8 +50,7 @@ public class PeticionActivity extends AppCompatActivity {
                 longitud = Float.parseFloat(lon.getText().toString());
                 nombre = nomb.getText().toString();
                 descripcion = desc.getText().toString();
-             //   builder.setMessage("Se generó el punto");
-                mapsActivity.GenerarPunto(latitud, longitud, nombre, descripcion);
+
             }
         });
         btnGPS = (Button) findViewById(R.id.ubAcbttn);
@@ -96,4 +102,33 @@ public class PeticionActivity extends AppCompatActivity {
         }
     }
 
+    public Connection conexionBD(){
+        Connection connection =null;
+        try {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection("jdbc:jtds:sqlserver://0.0.0.0;databaseName=NeedingHelp;user=ss;password=123");
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+        return connection;
+    }
+
+    public void agregarPeticion(){
+        try {
+            PreparedStatement pet = conexionBD().prepareStatement("insert into Peticiones values(?,?,?,?,?,?)");
+            pet.setString(2,nombre);
+            pet.setString(3,descripcion);
+            pet.setFloat(4,latitud);
+            pet.setFloat(5,longitud);
+            pet.setString(6, listView.toString());
+            pet.executeUpdate();
+            Toast.makeText(getApplicationContext(),"Petición enviada exitosamente",Toast.LENGTH_SHORT).show();
+
+            //  pet.setString(7,);
+        }catch (SQLException e){
+            Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    }
 }
