@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:title="Visualizar mapa" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:title="Realizar pedido" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:title="Buscar pedido por categoría" />
+        <item
+            android:id="@+id/nav_manage"
+            android:title="Consultar perfil" />
+    </group>
+
+    <item android:title="Contacto">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Correo" />
+        </menu>
+    </item>
+
+</menu>

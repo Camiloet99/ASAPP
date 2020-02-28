@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "1072717657533",
+    "firebase_url": "https://needinghelp.firebaseio.com",
+    "project_id": "needinghelp",
+    "storage_bucket": "needinghelp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072717657533:android:64cafb8337a1e352",
+        "android_client_info": {
+          "package_name": "com.example.usuario.needinghelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072717657533-2rfd3jkgkj5et6e150d5eqg4eraqgjus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.usuario.needinghelp",
+            "certificate_hash": "f0c3c34d27ee2530f7b8deb7db4979dd4aa126f6"
+          }
+        },
+        {
+          "client_id": "1072717657533-9pvdg7brl9jkbajcc1n46hsfn93jk68k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyComNIl6fyA5xmvxrBCGssCr2-AJy3CxXA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
