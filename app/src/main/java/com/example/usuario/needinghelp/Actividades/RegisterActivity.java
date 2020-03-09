@@ -1,4 +1,4 @@
-package com.example.usuario.needinghelp;
+package com.example.usuario.needinghelp.Actividades;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

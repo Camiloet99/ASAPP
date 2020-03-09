@@ -1,4 +1,4 @@
-package com.example.usuario.needinghelp;
+package com.example.usuario.needinghelp.Actividades;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.usuario.needinghelp.R;
+import com.example.usuario.needinghelp.SliderAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mSlideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         mDotLayout = (LinearLayout) findViewById(R.id.dotsLayout);
         mNextBtn = (Button) findViewById(R.id.nextBttn);
@@ -33,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         mSlideViewPager.setAdapter(sliderAdapter);
         addDotsIndicator(0);
         mSlideViewPager.addOnPageChangeListener(viewListener);
-
     }
 
     void AbrirMapa(View v){

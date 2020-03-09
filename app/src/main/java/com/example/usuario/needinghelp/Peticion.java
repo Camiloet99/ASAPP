@@ -1,51 +1,68 @@
 package com.example.usuario.needinghelp;
 
 public class Peticion {
-    private int lat, lon;
-    private String nombre, descripcion;
+    private int Id;
+    private String Nombre;
+    private String Descripcion;
+    private float Latitud;
+    private float Longitud;
+    private String Categoria;
 
-    public int getLat() {
-        return lat;
+    public Peticion(int id, String n, String desc, float lat, float lon, String cat){
+        this.Id = id;
+        Nombre = n;
+        Descripcion = desc;
+        Latitud = lat;
+        Longitud = lon;
+        Categoria = cat;
     }
 
-    public void setLat(int lat) {
-        this.lat = lat;
+    public int getId() {
+        return Id;
     }
 
-    public int getLon() {
-        return lon;
-    }
-
-    public void setLon(int lon) {
-        this.lon = lon;
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return Descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        Descripcion = descripcion;
     }
 
-    public Peticion(int la, int lo, String n, String desc ){
-        this.lat = la;
-        this.lon = lo;
-        this.nombre = n;
-        this.descripcion = desc;
+    public float getLatitud() {
+        return Latitud;
     }
 
-    public Peticion(){
-
+    public void setLatitud(float latitud) {
+        Latitud = latitud;
     }
 
+    public float getLongitud() {
+        return Longitud;
+    }
+
+    public void setLongitud(float longitud) {
+        Longitud = longitud;
+    }
+
+    public String getCategoria() {
+        return Categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        Categoria = categoria;
+    }
 
 }

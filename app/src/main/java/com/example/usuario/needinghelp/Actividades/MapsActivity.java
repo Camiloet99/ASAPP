@@ -1,9 +1,10 @@
-package com.example.usuario.needinghelp;
+package com.example.usuario.needinghelp.Actividades;
 
 import android.app.AlertDialog;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.usuario.needinghelp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,7 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private static GoogleMap mMap;
+    static GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

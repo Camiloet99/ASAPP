@@ -1,4 +1,4 @@
-package com.example.usuario.needinghelp;
+package com.example.usuario.needinghelp.Fragmentos;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.usuario.needinghelp.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -19,6 +20,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.json.JSONArray;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
@@ -57,13 +60,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(getContext());
         mGoogleMap = googleMap;
-        googleMap.setMapType(googleMap.MAP_TYPE_NORMAL);
-    }
 
-    public void GenerarPunto(Peticion peticion){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Se generó el punto");
-        LatLng latLng = new LatLng(peticion.getLat(),peticion.getLon());
-        mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(peticion.getNombre()).snippet(peticion.getDescripcion()));
+        googleMap.setMapType(googleMap.MAP_TYPE_NORMAL);
+        CameraPosition l = CameraPosition.builder().target(new LatLng(40.68,-74.04)).zoom(16).bearing(0).tilt(45).build();
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(l));
     }
 }

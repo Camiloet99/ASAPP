@@ -1,4 +1,4 @@
-package com.example.usuario.needinghelp;
+package com.example.usuario.needinghelp.Fragmentos;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.example.usuario.needinghelp.R;
 
 
 public class PeticionFragment extends Fragment {
